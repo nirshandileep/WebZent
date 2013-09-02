@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Ceramic Home (Pvt) Ltd</title>
+</head>
+<script type="text/javascript" language="JavaScript">
+var isEnable = navigator.javaEnabled();
+var win = null;
+    
+
+    
+if (isEnable)
+{
+	if (win)
+    {
+        alert("You have already opened a Ceramic Home Inventory instance");
+    }
+    else
+    {        
+        window.opener = "Something";
+        win = window.open('','LankaTiles');
+        win.location.href = "UserLogin.aspx";
+        win.focus();
+        self.close();
+    }
+}
+else
+{
+	alert("Java script is not enabled. Please enable the Java Script.");
+}
+
+</script>
+<body>
+
+</body>
+</html>

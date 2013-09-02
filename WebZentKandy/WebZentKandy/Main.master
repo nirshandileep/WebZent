@@ -1,0 +1,181 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Main.master.cs" Inherits="Main" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+    <script type="text/javascript" language="javascript" src="JS/Validations.js"></script>
+
+    <script language="javascript" type="text/javascript" src="JS/Dialogs.js"></script>
+
+    <script type="text/javascript" language="javascript" src="JS/jQueryLib.js"></script>
+
+    <title>Ceramic Home (Pvt) Ltd</title>
+    <link rel="stylesheet" type="text/css" href="Common/Main.css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="wrapper">
+            <div id="header">
+                <div id="headerbottomb">
+                    <div class="left">
+                        <p>
+                            <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/logo.png" ToolTip="Ceramic Home (Pvt) Ltd - Inventory control system" />&nbsp
+                            Ceramic Home (Pvt) Ltd - Sales & Inventory control system
+                        </p>
+                    </div>
+                </div>
+                Logged User :
+                <asp:Label ID="lblLoggedUser" runat="server" Text=""></asp:Label><br />
+                Last Action :
+                <asp:Label ID="lblLoadTime" runat="server" Text=""></asp:Label>
+            </div>
+            <div id="headerbottom">
+                <div class="pd_menu_01">
+                    <ul>
+                        <li><a href="Home.aspx">Home</a></li>
+                    </ul>
+                    <ul class="hide">
+                        <li><a>Vendor</a>
+                            <ul>
+                                <li><a href="#">Add Vendor</a></li>
+                                <li><a href="#">Edit Vendor</a></li>
+                                <li><a href="#">Delete Vendor</a></li>
+                                <li><a href="#">Vendor List</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul id="ulSupplier" runat="server">
+                        <li><a>Supplier</a>
+                            <ul>
+                                <li><a href="AddSupplier.aspx">Add Supplier</a></li>
+                                <li><a href="SupplierSearch.aspx" visible="false">Search Supplier</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul id="ulCustomer" runat="server">
+                        <li><a>Customers</a>
+                            <ul>
+                                <li><a href="AddCustomer.aspx">Add Customer</a></li>
+                                <li><a href="SearchCustomer.aspx" visible="false">Search Customer</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul id="ulPO" runat="server">
+                        <li><a>Purchasr Orders</a>
+                            <ul>
+                                <li><a href="POAdd.aspx">Add Purchase Order</a></li>
+                                <li><a href="POSearch.aspx">Search Purchase Orders</a></li>
+                                <li><a href="PurchaseReturns.aspx">Purchase Returns</a></li>
+                                <li><a href="PurchaseReturnsSearch.aspx">Purchase Returns Search</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul runat="server" id="ulItemsManagement">
+                        <li><a>Items Management</a>
+                            <ul>
+                                <li><a href="AddItem.aspx">Add Item</a></li>
+                                <li runat="server" visible="false" id="liGroupItemCreate"><a href="GroupItemAdd.aspx">Create Group Item</a></li>
+                                <li id="liItemSearch" runat="server"><a href="ProductSearch.aspx">Item Search</a></li>
+                                <li  runat="server" visible="false" id="liGroupItemSearch"><a href="SearchGroupItems.aspx">Group Item Search</a></li>
+                                <li><a href="AddCategory.aspx">Add Item Category</a></li>
+                                <li><a href="SearchBrands.aspx">Brands</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul id="ulInventory" runat="server">
+                        <li><a>Inventory</a>
+                            <ul>
+                                <li id="liRecieveGoods" runat="server"><a href="RecieveGoods.aspx">Generate GRN</a></li>
+                                <li id="liGRNSearch" runat="server"><a href="GRNSearch.aspx">Search GRN</a></li>
+                                <li id="liItemTransfer" runat="server"><a href="ItemTransfer.aspx">Transfer Items</a></li>
+                                <li id="liSearchTransfers" runat="server"><a href="SearchTransfers.aspx">Transfer Search</a></li>
+                                <li id="liAddGatePass" runat="server"><a href="AddGatePass.aspx">Generate Gate Pass</a></li>
+                                <li id="liSearchGatePass" runat="server"><a href="SearchGatePass.aspx">Search Gate Pass</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul id="ulSales" runat="server">
+                        <li><a>Sales</a>
+                            <ul>
+                                <li><a href="AddInvoice.aspx">Add Invoice</a></li>
+                                <li id="liSearchInvoice" runat="server"><a href="SearchInvoice.aspx">Search Invoice</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul id="ulVouchers" runat="server">
+                        <li><a>Vouchers</a>
+                            <ul>
+                                <li id="liAddVoucher" runat="server"><a href="AddVoucher.aspx">Add Voucher</a></li>
+                                <li id="liSearchVoucher" runat="server"><a href="SearchVouchers.aspx">Search Vouchers</a></li>
+                                <li id="liAddRecVoucher" runat="server"><a href="VouchersReceivable.aspx">Add Receivable
+                                    Voucher</a></li>
+                                <li id="liSearchRecVoucher" runat="server"><a href="SearchReceivableVouchers.aspx">Search
+                                    Reveivable Vouchers</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul id="ulReports" runat="server">
+                        <li><a>Reports</a>
+                            <ul>
+                                <li id="liReportSales" runat="server"><a href="ReportSales.aspx">Sales Report</a></li>
+                                <li id="liReportSalesByItem" runat="server"><a href="ReportSalesByItem.aspx">Sales Report
+                                    by Item</a></li>
+                                <li id="liReportPurchaseOrderMain" runat="server"><a href="ReportPurchaseOrderMain.aspx">
+                                    Purchase Report</a></li>
+                                <li id="liReportPurchaseOrders" runat="server"><a href="ReportPurchaseOrders.aspx">Purchase
+                                    Report by Item</a></li>
+                                <li id="liReportPaymentsReveived" runat="server"><a href="ReportPaymentsReveived.aspx">
+                                    Payments Received Report</a></li>
+                                <li id="liReportvoucherexpences" runat="server"><a href="Reportvoucherexpences.aspx">
+                                    Expense Report</a></li>
+                                <li id="liReportdaybook" runat="server"><a href="Reportdaybook.aspx">Daybook Report</a></li>
+                                <li id="liReportSalesBySalesRep" runat="server"><a href="ReportSalesBySalesRep.aspx">
+                                    Sales Rep. Report</a></li>
+                                <li id="liSuppChqReport" runat="server"><a href="ReportCheques.aspx">Supplier Cheque
+                                    Report</a></li>
+                                <li id="liSuppHistReport" runat="server"><a href="ReportSupplierPayments.aspx">Supplier Transaction Report</a></li>
+                                <li id="liCustomerReport" runat="server"><a href="ReportCustomerFull.aspx">Customer Report</a></li>
+                                <li id="liItemHistory" runat="server"><a href="ReportItemHistory.aspx">Items History Report</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul id="ulChqManagement" runat="server">
+                        <li><a>Cheque Management</a>
+                            <ul>
+                                <li><a href="AddChequeBook.aspx">Create Cheque Book</a></li>
+                                <li><a href="SearchChequeBooks.aspx">Search Cheques</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul id="ulUserManagemennt" runat="server">
+                        <li><a>Manage Users</a>
+                            <ul>
+                                <li><a href="AddUser.aspx">Add Users</a></li>
+                                <li><a href="SearchUsers.aspx">Search Users</a></li>
+                                <li><a href="AddBranch.aspx">Add Branch</a></li>
+                                <li><a href="BranchSearch.aspx">View All Branches</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><a href="UserLogin.aspx">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="body">
+                <div class="entry">
+                    <div class="entrybody">
+                        <div>
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                All Rights Recerved By Ceramic Home (PVT) LTD.
+            </div>
+        </div>
+    </form>
+</body>
+</html>
