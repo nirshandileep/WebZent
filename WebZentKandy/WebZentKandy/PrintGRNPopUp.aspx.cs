@@ -114,6 +114,13 @@ public partial class PrintGRNPopUp : System.Web.UI.Page
             {
                 hdnGRNType.Value = "1";//PO used in client side
                 lblGRNType.Text = "Purchase Order";
+
+                int poId = ObjGRN.POId.Value;
+                PO po = new PO();
+                po.POId = poId;
+                po.GetPOByID();
+
+                lblSupplierName.Text = po.SupplierName;
             }
             else if (ObjGRN.InvId.HasValue)//Sales return  used in client side
             {

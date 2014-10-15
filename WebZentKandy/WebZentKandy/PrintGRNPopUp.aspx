@@ -128,9 +128,9 @@
                             <td align="left" style="width: 13px" valign="bottom">
                             </td>
                             <td align="left" style="width: 129px" valign="bottom">
-                            </td>
+                                Supplier Name:</td>
                             <td align="left" style="width: 130px" valign="bottom">
-                            </td>
+                                <asp:Label ID="lblSupplierName" runat="server"></asp:Label></td>
                         </tr>
                         <tr id="trSupplierInvNoE">
                             <td align="left" style="width: 86px" valign="bottom">
